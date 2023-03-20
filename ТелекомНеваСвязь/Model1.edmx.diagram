@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0041e18fc18045e3b6628f7c6c780166" Name="Diagram1">
+        <EntityTypeShape EntityType="CRM24Model.Address" Width="1.5" PointX="10.25" PointY="10" />
+        <EntityTypeShape EntityType="CRM24Model.City" Width="1.5" PointX="8" PointY="16.875" />
+        <EntityTypeShape EntityType="CRM24Model.Country" Width="1.5" PointX="8" PointY="19.25" />
+        <EntityTypeShape EntityType="CRM24Model.CRM" Width="1.5" PointX="6" PointY="4.125" />
+        <EntityTypeShape EntityType="CRM24Model.DistrictsAddress" Width="1.5" PointX="8" PointY="10.5" />
+        <EntityTypeShape EntityType="CRM24Model.Employees" Width="1.5" PointX="15" PointY="10.75" />
+        <EntityTypeShape EntityType="CRM24Model.Equipments" Width="1.5" PointX="10.25" PointY="5.75" />
+        <EntityTypeShape EntityType="CRM24Model.Gender" Width="1.5" PointX="10.25" PointY="3.5" />
+        <EntityTypeShape EntityType="CRM24Model.Information" Width="1.5" PointX="15" PointY="17.75" />
+        <EntityTypeShape EntityType="CRM24Model.PassportData" Width="1.5" PointX="10.25" PointY="14.375" />
+        <EntityTypeShape EntityType="CRM24Model.Problem" Width="1.5" PointX="3.75" PointY="18" />
+        <EntityTypeShape EntityType="CRM24Model.ReasonForTermination" Width="1.5" PointX="1.5" PointY="11.875" />
+        <EntityTypeShape EntityType="CRM24Model.Roles" Width="1.5" PointX="12.75" PointY="14.25" />
+        <EntityTypeShape EntityType="CRM24Model.Service" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="CRM24Model.ServiceTreaty" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="CRM24Model.Status" Width="1.5" PointX="3.75" PointY="15.625" />
+        <EntityTypeShape EntityType="CRM24Model.Street" Width="1.5" PointX="8" PointY="14.625" />
+        <EntityTypeShape EntityType="CRM24Model.Subscriber" Width="1.5" PointX="12.5" PointY="4.875" />
+        <EntityTypeShape EntityType="CRM24Model.Treaty" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM24Model.TypeOfBuilding" Width="1.5" PointX="5.75" PointY="10.875" />
+        <EntityTypeShape EntityType="CRM24Model.TypeOfProblem" Width="1.5" PointX="3.75" PointY="8.625" />
+        <EntityTypeShape EntityType="CRM24Model.TypeService" Width="1.5" PointX="3.75" PointY="13.25" />
+        <EntityTypeShape EntityType="CRM24Model.TypeTreaty" Width="1.5" PointX="1.5" PointY="9.625" />
+        <EntityTypeShape EntityType="CRM24Model.Users" Width="1.5" PointX="15" PointY="14.25" />
+        <EntityTypeShape EntityType="CRM24Model.ViewService" Width="1.5" PointX="3.75" PointY="10.875" />
+        <AssociationConnector Association="CRM24Model.FK_Address_City" />
+        <AssociationConnector Association="CRM24Model.FK_Address_Country" />
+        <AssociationConnector Association="CRM24Model.FK_Address_Districts" />
+        <AssociationConnector Association="CRM24Model.FK_Address_Street" />
+        <AssociationConnector Association="CRM24Model.FK_Subscriber_Address" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_Problem" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_Service" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_Status" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_TypeOfProblem" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_TypeService" />
+        <AssociationConnector Association="CRM24Model.FK_Applications_ViewService" />
+        <AssociationConnector Association="CRM24Model.FK_Districts_TypeOfBuilding" />
+        <AssociationConnector Association="CRM24Model.FK_Employees_Roles" />
+        <AssociationConnector Association="CRM24Model.FK_Subscriber_Equipments" />
+        <AssociationConnector Association="CRM24Model.FK_Subscriber_Gender" />
+        <AssociationConnector Association="CRM24Model.FK_Information_Roles" />
+        <AssociationConnector Association="CRM24Model.FK_Subscriber_PassportData" />
+        <AssociationConnector Association="CRM24Model.FK_Treaty_ReasonForTermination" />
+        <AssociationConnector Association="CRM24Model.FK_Users_Roles" />
+        <AssociationConnector Association="CRM24Model.FK_ServiceTreaty_Service" />
+        <AssociationConnector Association="CRM24Model.FK_ServiceTreaty_Treaty" />
+        <AssociationConnector Association="CRM24Model.FK_Subscriber_Treaty" />
+        <AssociationConnector Association="CRM24Model.FK_Treaty_TypeTreaty" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище CRM24Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="IDAddress" />
+    </Key>
+    <Property Name="IDAddress" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="int" Nullable="false" />
+    <Property Name="City" Type="int" Nullable="false" />
+    <Property Name="Street" Type="int" Nullable="false" />
+    <Property Name="Home" Type="int" />
+    <Property Name="Apartment" Type="nvarchar" MaxLength="50" />
+    <Property Name="Districts" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="IDCountry" />
+    </Key>
+    <Property Name="IDCountry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CRM">
+    <Key>
+      <PropertyRef Name="ApplicationNumber" />
+    </Key>
+    <Property Name="ApplicationNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApplicationDate" Type="datetime" Nullable="false" />
+    <Property Name="PersonalAccount" Type="int" Nullable="false" />
+    <Property Name="Service" Type="int" Nullable="false" />
+    <Property Name="ServiceType" Type="int" Nullable="false" />
+    <Property Name="ApplicationView" Type="int" Nullable="false" />
+    <Property Name="ServiceStatus" Type="int" Nullable="false" />
+    <Property Name="TypeEquipment" Type="nvarchar(max)" />
+    <Property Name="Problem" Type="int" />
+    <Property Name="DateClosing" Type="datetime" />
+    <Property Name="TypeProblem" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DistrictsAddress">
+    <Key>
+      <PropertyRef Name="DistrictsID" />
+    </Key>
+    <Property Name="DistrictsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictsName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DistrictSquare" Type="float" Nullable="false" />
+    <Property Name="DistrictPopulation" Type="int" Nullable="false" />
+    <Property Name="DistrictMetro" Type="int" Nullable="false" />
+    <Property Name="DistrictBuildingType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Number" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="int" Nullable="false" />
+    <Property Name="IDRole" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Equipments">
+    <Key>
+      <PropertyRef Name="EquipmentID" />
+    </Key>
+    <Property Name="EquipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EquipmentName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EquipmentSeriaNumber" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="IDInformation" />
+    </Key>
+    <Property Name="IDInformation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDRole" Type="int" Nullable="false" />
+    <Property Name="Information" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PassportData">
+    <Key>
+      <PropertyRef Name="IDSubscriber" />
+    </Key>
+    <Property Name="IDSubscriber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Series" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="PassportCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PassportIssued" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PassportDateIssued" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Problem">
+    <Key>
+      <PropertyRef Name="IDProblem" />
+    </Key>
+    <Property Name="IDProblem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProblemName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReasonForTermination">
+    <Key>
+      <PropertyRef Name="IDReasonForTermination" />
+    </Key>
+    <Property Name="IDReasonForTermination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReasonForTermination" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="IDService" />
+    </Key>
+    <Property Name="IDService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceTreaty">
+    <Key>
+      <PropertyRef Name="IDServiceTreaty" />
+    </Key>
+    <Property Name="IDServiceTreaty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceID" Type="int" Nullable="false" />
+    <Property Name="TreatyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="IDStatus" />
+    </Key>
+    <Property Name="IDStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="IDStreet" />
+    </Key>
+    <Property Name="IDStreet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StreetName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscriber">
+    <Key>
+      <PropertyRef Name="IDSubscriber" />
+    </Key>
+    <Property Name="IDSubscriber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubscriberSurname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubscriberName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubscriberPatronymic" Type="nvarchar" MaxLength="50" />
+    <Property Name="Genre" Type="int" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" Nullable="false" />
+    <Property Name="NumberPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AddressRegistration" Type="int" Nullable="false" />
+    <Property Name="AddressAccommodation" Type="int" Nullable="false" />
+    <Property Name="IDTreaty" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubscriberEquipment" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Treaty">
+    <Key>
+      <PropertyRef Name="TreatyNumber" />
+    </Key>
+    <Property Name="TreatyNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TreatyDateСonclusion" Type="datetime" Nullable="false" />
+    <Property Name="TreatyType" Type="int" Nullable="false" />
+    <Property Name="ReasonForTermination" Type="int" />
+    <Property Name="TreatyTerminationDate" Type="datetime" />
+    <Property Name="TreatyPersonalAccount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeOfBuilding">
+    <Key>
+      <PropertyRef Name="IDTypeOfBuilding" />
+    </Key>
+    <Property Name="IDTypeOfBuilding" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeOfBuilding" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeOfProblem">
+    <Key>
+      <PropertyRef Name="IDTypeOfProblem" />
+    </Key>
+    <Property Name="IDTypeOfProblem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeOfProblem" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TypeService">
+    <Key>
+      <PropertyRef Name="IDTypeService" />
+    </Key>
+    <Property Name="IDTypeService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeService" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeTreaty">
+    <Key>
+      <PropertyRef Name="IDTypeTreaty" />
+    </Key>
+    <Property Name="IDTypeTreaty" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeTreaty" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Number" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="int" Nullable="false" />
+    <Property Name="IDRole" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ViewService">
+    <Key>
+      <PropertyRef Name="IDView" />
+    </Key>
+    <Property Name="IDView" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ViewName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Address_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="IDCountry" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Districts">
+    <End Role="DistrictsAddress" Type="Self.DistrictsAddress" Multiplicity="0..1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictsAddress">
+        <PropertyRef Name="DistrictsID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Districts" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Street">
+    <End Role="Street" Type="Self.Street" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="IDStreet" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Street" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Problem">
+    <End Role="Problem" Type="Self.Problem" Multiplicity="0..1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="IDProblem" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="Problem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="IDService" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="Service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="IDStatus" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ServiceStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_TypeOfProblem">
+    <End Role="TypeOfProblem" Type="Self.TypeOfProblem" Multiplicity="1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfProblem">
+        <PropertyRef Name="IDTypeOfProblem" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="TypeProblem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_TypeService">
+    <End Role="TypeService" Type="Self.TypeService" Multiplicity="1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeService">
+        <PropertyRef Name="IDTypeService" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ServiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_ViewService">
+    <End Role="ViewService" Type="Self.ViewService" Multiplicity="1" />
+    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ViewService">
+        <PropertyRef Name="IDView" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ApplicationView" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_TypeOfBuilding">
+    <End Role="TypeOfBuilding" Type="Self.TypeOfBuilding" Multiplicity="1" />
+    <End Role="DistrictsAddress" Type="Self.DistrictsAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfBuilding">
+        <PropertyRef Name="IDTypeOfBuilding" />
+      </Principal>
+      <Dependent Role="DistrictsAddress">
+        <PropertyRef Name="DistrictBuildingType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Information_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Information" Type="Self.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceTreaty_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="ServiceTreaty" Type="Self.ServiceTreaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="IDService" />
+      </Principal>
+      <Dependent Role="ServiceTreaty">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceTreaty_Treaty">
+    <End Role="Treaty" Type="Self.Treaty" Multiplicity="1" />
+    <End Role="ServiceTreaty" Type="Self.ServiceTreaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treaty">
+        <PropertyRef Name="TreatyNumber" />
+      </Principal>
+      <Dependent Role="ServiceTreaty">
+        <PropertyRef Name="TreatyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="IDAddress" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="AddressRegistration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Equipments">
+    <End Role="Equipments" Type="Self.Equipments" Multiplicity="1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipments">
+        <PropertyRef Name="EquipmentID" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="SubscriberEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="Genre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_PassportData">
+    <End Role="PassportData" Type="Self.PassportData" Multiplicity="1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PassportData">
+        <PropertyRef Name="IDSubscriber" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="IDSubscriber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Treaty">
+    <End Role="Treaty" Type="Self.Treaty" Multiplicity="1" />
+    <End Role="Subscriber" Type="Self.Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treaty">
+        <PropertyRef Name="TreatyNumber" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="IDTreaty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treaty_ReasonForTermination">
+    <End Role="ReasonForTermination" Type="Self.ReasonForTermination" Multiplicity="0..1" />
+    <End Role="Treaty" Type="Self.Treaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForTermination">
+        <PropertyRef Name="IDReasonForTermination" />
+      </Principal>
+      <Dependent Role="Treaty">
+        <PropertyRef Name="ReasonForTermination" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treaty_TypeTreaty">
+    <End Role="TypeTreaty" Type="Self.TypeTreaty" Multiplicity="1" />
+    <End Role="Treaty" Type="Self.Treaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeTreaty">
+        <PropertyRef Name="IDTypeTreaty" />
+      </Principal>
+      <Dependent Role="Treaty">
+        <PropertyRef Name="TreatyType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище CRM24ModelContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRM" EntityType="Self.CRM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DistrictsAddress" EntityType="Self.DistrictsAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipments" EntityType="Self.Equipments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Information" EntityType="Self.Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PassportData" EntityType="Self.PassportData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Problem" EntityType="Self.Problem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReasonForTermination" EntityType="Self.ReasonForTermination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceTreaty" EntityType="Self.ServiceTreaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subscriber" EntityType="Self.Subscriber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treaty" EntityType="Self.Treaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeOfBuilding" EntityType="Self.TypeOfBuilding" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeOfProblem" EntityType="Self.TypeOfProblem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeService" EntityType="Self.TypeService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeTreaty" EntityType="Self.TypeTreaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewService" EntityType="Self.ViewService" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Address_City" Association="Self.FK_Address_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Country" Association="Self.FK_Address_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Districts" Association="Self.FK_Address_Districts">
+      <End Role="DistrictsAddress" EntitySet="DistrictsAddress" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Street" Association="Self.FK_Address_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Problem" Association="Self.FK_Applications_Problem">
+      <End Role="Problem" EntitySet="Problem" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Service" Association="Self.FK_Applications_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Status" Association="Self.FK_Applications_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_TypeOfProblem" Association="Self.FK_Applications_TypeOfProblem">
+      <End Role="TypeOfProblem" EntitySet="TypeOfProblem" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_TypeService" Association="Self.FK_Applications_TypeService">
+      <End Role="TypeService" EntitySet="TypeService" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_ViewService" Association="Self.FK_Applications_ViewService">
+      <End Role="ViewService" EntitySet="ViewService" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_TypeOfBuilding" Association="Self.FK_Districts_TypeOfBuilding">
+      <End Role="TypeOfBuilding" EntitySet="TypeOfBuilding" />
+      <End Role="DistrictsAddress" EntitySet="DistrictsAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Roles" Association="Self.FK_Employees_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Information_Roles" Association="Self.FK_Information_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceTreaty_Service" Association="Self.FK_ServiceTreaty_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceTreaty" EntitySet="ServiceTreaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceTreaty_Treaty" Association="Self.FK_ServiceTreaty_Treaty">
+      <End Role="Treaty" EntitySet="Treaty" />
+      <End Role="ServiceTreaty" EntitySet="ServiceTreaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Address" Association="Self.FK_Subscriber_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Equipments" Association="Self.FK_Subscriber_Equipments">
+      <End Role="Equipments" EntitySet="Equipments" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Gender" Association="Self.FK_Subscriber_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_PassportData" Association="Self.FK_Subscriber_PassportData">
+      <End Role="PassportData" EntitySet="PassportData" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Treaty" Association="Self.FK_Subscriber_Treaty">
+      <End Role="Treaty" EntitySet="Treaty" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treaty_ReasonForTermination" Association="Self.FK_Treaty_ReasonForTermination">
+      <End Role="ReasonForTermination" EntitySet="ReasonForTermination" />
+      <End Role="Treaty" EntitySet="Treaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treaty_TypeTreaty" Association="Self.FK_Treaty_TypeTreaty">
+      <End Role="TypeTreaty" EntitySet="TypeTreaty" />
+      <End Role="Treaty" EntitySet="Treaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRM24Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Address" EntityType="CRM24Model.Address" />
+    <EntitySet Name="City" EntityType="CRM24Model.City" />
+    <EntitySet Name="Country" EntityType="CRM24Model.Country" />
+    <EntitySet Name="CRM" EntityType="CRM24Model.CRM" />
+    <EntitySet Name="DistrictsAddress" EntityType="CRM24Model.DistrictsAddress" />
+    <EntitySet Name="Employees" EntityType="CRM24Model.Employees" />
+    <EntitySet Name="Equipments" EntityType="CRM24Model.Equipments" />
+    <EntitySet Name="Gender" EntityType="CRM24Model.Gender" />
+    <EntitySet Name="Information" EntityType="CRM24Model.Information" />
+    <EntitySet Name="PassportData" EntityType="CRM24Model.PassportData" />
+    <EntitySet Name="Problem" EntityType="CRM24Model.Problem" />
+    <EntitySet Name="ReasonForTermination" EntityType="CRM24Model.ReasonForTermination" />
+    <EntitySet Name="Roles" EntityType="CRM24Model.Roles" />
+    <EntitySet Name="Service" EntityType="CRM24Model.Service" />
+    <EntitySet Name="ServiceTreaty" EntityType="CRM24Model.ServiceTreaty" />
+    <EntitySet Name="Status" EntityType="CRM24Model.Status" />
+    <EntitySet Name="Street" EntityType="CRM24Model.Street" />
+    <EntitySet Name="Subscriber" EntityType="CRM24Model.Subscriber" />
+    <EntitySet Name="Treaty" EntityType="CRM24Model.Treaty" />
+    <EntitySet Name="TypeOfBuilding" EntityType="CRM24Model.TypeOfBuilding" />
+    <EntitySet Name="TypeOfProblem" EntityType="CRM24Model.TypeOfProblem" />
+    <EntitySet Name="TypeService" EntityType="CRM24Model.TypeService" />
+    <EntitySet Name="TypeTreaty" EntityType="CRM24Model.TypeTreaty" />
+    <EntitySet Name="Users" EntityType="CRM24Model.Users" />
+    <EntitySet Name="ViewService" EntityType="CRM24Model.ViewService" />
+    <AssociationSet Name="FK_Address_City" Association="CRM24Model.FK_Address_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Country" Association="CRM24Model.FK_Address_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Districts" Association="CRM24Model.FK_Address_Districts">
+      <End Role="DistrictsAddress" EntitySet="DistrictsAddress" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Address_Street" Association="CRM24Model.FK_Address_Street">
+      <End Role="Street" EntitySet="Street" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Address" Association="CRM24Model.FK_Subscriber_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Problem" Association="CRM24Model.FK_Applications_Problem">
+      <End Role="Problem" EntitySet="Problem" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Service" Association="CRM24Model.FK_Applications_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_Status" Association="CRM24Model.FK_Applications_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_TypeOfProblem" Association="CRM24Model.FK_Applications_TypeOfProblem">
+      <End Role="TypeOfProblem" EntitySet="TypeOfProblem" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_TypeService" Association="CRM24Model.FK_Applications_TypeService">
+      <End Role="TypeService" EntitySet="TypeService" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Applications_ViewService" Association="CRM24Model.FK_Applications_ViewService">
+      <End Role="ViewService" EntitySet="ViewService" />
+      <End Role="CRM" EntitySet="CRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_TypeOfBuilding" Association="CRM24Model.FK_Districts_TypeOfBuilding">
+      <End Role="TypeOfBuilding" EntitySet="TypeOfBuilding" />
+      <End Role="DistrictsAddress" EntitySet="DistrictsAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employees_Roles" Association="CRM24Model.FK_Employees_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Equipments" Association="CRM24Model.FK_Subscriber_Equipments">
+      <End Role="Equipments" EntitySet="Equipments" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Gender" Association="CRM24Model.FK_Subscriber_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Information_Roles" Association="CRM24Model.FK_Information_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Information" EntitySet="Information" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_PassportData" Association="CRM24Model.FK_Subscriber_PassportData">
+      <End Role="PassportData" EntitySet="PassportData" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treaty_ReasonForTermination" Association="CRM24Model.FK_Treaty_ReasonForTermination">
+      <End Role="ReasonForTermination" EntitySet="ReasonForTermination" />
+      <End Role="Treaty" EntitySet="Treaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="CRM24Model.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceTreaty_Service" Association="CRM24Model.FK_ServiceTreaty_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ServiceTreaty" EntitySet="ServiceTreaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceTreaty_Treaty" Association="CRM24Model.FK_ServiceTreaty_Treaty">
+      <End Role="Treaty" EntitySet="Treaty" />
+      <End Role="ServiceTreaty" EntitySet="ServiceTreaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriber_Treaty" Association="CRM24Model.FK_Subscriber_Treaty">
+      <End Role="Treaty" EntitySet="Treaty" />
+      <End Role="Subscriber" EntitySet="Subscriber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treaty_TypeTreaty" Association="CRM24Model.FK_Treaty_TypeTreaty">
+      <End Role="TypeTreaty" EntitySet="TypeTreaty" />
+      <End Role="Treaty" EntitySet="Treaty" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="IDAddress" />
+    </Key>
+    <Property Name="IDAddress" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="Int32" Nullable="false" />
+    <Property Name="Street" Type="Int32" Nullable="false" />
+    <Property Name="Home" Type="Int32" />
+    <Property Name="Apartment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Districts" Type="Int32" />
+    <NavigationProperty Name="City1" Relationship="CRM24Model.FK_Address_City" FromRole="Address" ToRole="City" />
+    <NavigationProperty Name="Country1" Relationship="CRM24Model.FK_Address_Country" FromRole="Address" ToRole="Country" />
+    <NavigationProperty Name="DistrictsAddress" Relationship="CRM24Model.FK_Address_Districts" FromRole="Address" ToRole="DistrictsAddress" />
+    <NavigationProperty Name="Street1" Relationship="CRM24Model.FK_Address_Street" FromRole="Address" ToRole="Street" />
+    <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_Address" FromRole="Address" ToRole="Subscriber" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="City1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="CRM24Model.FK_Address_City" FromRole="City" ToRole="Address" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="IDCountry" />
+    </Key>
+    <Property Name="IDCountry" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="CRM24Model.FK_Address_Country" FromRole="Country" ToRole="Address" />
+  </EntityType>
+  <EntityType Name="CRM">
+    <Key>
+      <PropertyRef Name="ApplicationNumber" />
+    </Key>
+    <Property Name="ApplicationNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PersonalAccount" Type="Int32" Nullable="false" />
+    <Property Name="Service" Type="Int32" Nullable="false" />
+    <Property Name="ServiceType" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationView" Type="Int32" Nullable="false" />
+    <Property Name="ServiceStatus" Type="Int32" Nullable="false" />
+    <Property Name="TypeEquipment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Problem" Type="Int32" />
+    <Property Name="DateClosing" Type="DateTime" Precision="3" />
+    <Property Name="TypeProblem" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Problem1" Relationship="CRM24Model.FK_Applications_Problem" FromRole="CRM" ToRole="Problem" />
+    <NavigationProperty Name="Service1" Relationship="CRM24Model.FK_Applications_Service" FromRole="CRM" ToRole="Service" />
+    <NavigationProperty Name="Status" Relationship="CRM24Model.FK_Applications_Status" FromRole="CRM" ToRole="Status" />
+    <NavigationProperty Name="TypeOfProblem" Relationship="CRM24Model.FK_Applications_TypeOfProblem" FromRole="CRM" ToRole="TypeOfProblem" />
+    <NavigationProperty Name="TypeService" Relationship="CRM24Model.FK_Applications_TypeService" FromRole="CRM" ToRole="TypeService" />
+    <NavigationProperty Name="ViewService" Relationship="CRM24Model.FK_Applications_ViewService" FromRole="CRM" ToRole="ViewService" />
+  </EntityType>
+  <EntityType Name="DistrictsAddress">
+    <Key>
+      <PropertyRef Name="DistrictsID" />
+    </Key>
+    <Property Name="DistrictsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictsName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictSquare" Type="Double" Nullable="false" />
+    <Property Name="DistrictPopulation" Type="Int32" Nullable="false" />
+    <Property Name="DistrictMetro" Type="Int32" Nullable="false" />
+    <Property Name="DistrictBuildingType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="CRM24Model.FK_Address_Districts" FromRole="DistrictsAddress" ToRole="Address" />
+    <NavigationProperty Name="TypeOfBuilding" Relationship="CRM24Model.FK_Districts_TypeOfBuilding" FromRole="DistrictsAddress" ToRole="TypeOfBuilding" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="Int32" Nullable="false" />
+    <Property Name="IDRole" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Roles" Relationship="CRM24Model.FK_Employees_Roles" FromRole="Employees" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Equipments">
+    <Key>
+      <PropertyRef Name="EquipmentID" />
+    </Key>
+    <Property Name="EquipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EquipmentName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EquipmentSeriaNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_Equipments" FromRole="Equipments" ToRole="Subscriber" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_Gender" FromRole="Gender" ToRole="Subscriber" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="IDInformation" />
+    </Key>
+    <Property Name="IDInformation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDRole" Type="Int32" Nullable="false" />
+    <Property Name="Information1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Roles" Relationship="CRM24Model.FK_Information_Roles" FromRole="Information" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="PassportData">
+    <Key>
+      <PropertyRef Name="IDSubscriber" />
+    </Key>
+    <Property Name="IDSubscriber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Series" Type="Int32" Nullable="false" />
+    <Property Name="Number" Type="Int32" Nullable="false" />
+    <Property Name="PassportCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportIssued" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PassportDateIssued" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_PassportData" FromRole="PassportData" ToRole="Subscriber" />
+  </EntityType>
+  <EntityType Name="Problem">
+    <Key>
+      <PropertyRef Name="IDProblem" />
+    </Key>
+    <Property Name="IDProblem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProblemName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_Problem" FromRole="Problem" ToRole="CRM" />
+  </EntityType>
+  <EntityType Name="ReasonForTermination">
+    <Key>
+      <PropertyRef Name="IDReasonForTermination" />
+    </Key>
+    <Property Name="IDReasonForTermination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReasonForTermination1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Treaty" Relationship="CRM24Model.FK_Treaty_ReasonForTermination" FromRole="ReasonForTermination" ToRole="Treaty" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employees" Relationship="CRM24Model.FK_Employees_Roles" FromRole="Roles" ToRole="Employees" />
+    <NavigationProperty Name="Information" Relationship="CRM24Model.FK_Information_Roles" FromRole="Roles" ToRole="Information" />
+    <NavigationProperty Name="Users" Relationship="CRM24Model.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="IDService" />
+    </Key>
+    <Property Name="IDService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_Service" FromRole="Service" ToRole="CRM" />
+    <NavigationProperty Name="ServiceTreaty" Relationship="CRM24Model.FK_ServiceTreaty_Service" FromRole="Service" ToRole="ServiceTreaty" />
+  </EntityType>
+  <EntityType Name="ServiceTreaty">
+    <Key>
+      <PropertyRef Name="IDServiceTreaty" />
+    </Key>
+    <Property Name="IDServiceTreaty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="TreatyID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Service" Relationship="CRM24Model.FK_ServiceTreaty_Service" FromRole="ServiceTreaty" ToRole="Service" />
+    <NavigationProperty Name="Treaty" Relationship="CRM24Model.FK_ServiceTreaty_Treaty" FromRole="ServiceTreaty" ToRole="Treaty" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="IDStatus" />
+    </Key>
+    <Property Name="IDStatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_Status" FromRole="Status" ToRole="CRM" />
+  </EntityType>
+  <EntityType Name="Street">
+    <Key>
+      <PropertyRef Name="IDStreet" />
+    </Key>
+    <Property Name="IDStreet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StreetName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="CRM24Model.FK_Address_Street" FromRole="Street" ToRole="Address" />
+  </EntityType>
+  <EntityType Name="Subscriber">
+    <Key>
+      <PropertyRef Name="IDSubscriber" />
+    </Key>
+    <Property Name="IDSubscriber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriberSurname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriberName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriberPatronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Genre" Type="Int32" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumberPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddressRegistration" Type="Int32" Nullable="false" />
+    <Property Name="AddressAccommodation" Type="Int32" Nullable="false" />
+    <Property Name="IDTreaty" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriberEquipment" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="CRM24Model.FK_Subscriber_Address" FromRole="Subscriber" ToRole="Address" />
+    <NavigationProperty Name="Equipments" Relationship="CRM24Model.FK_Subscriber_Equipments" FromRole="Subscriber" ToRole="Equipments" />
+    <NavigationProperty Name="Gender" Relationship="CRM24Model.FK_Subscriber_Gender" FromRole="Subscriber" ToRole="Gender" />
+    <NavigationProperty Name="PassportData" Relationship="CRM24Model.FK_Subscriber_PassportData" FromRole="Subscriber" ToRole="PassportData" />
+    <NavigationProperty Name="Treaty" Relationship="CRM24Model.FK_Subscriber_Treaty" FromRole="Subscriber" ToRole="Treaty" />
+  </EntityType>
+  <EntityType Name="Treaty">
+    <Key>
+      <PropertyRef Name="TreatyNumber" />
+    </Key>
+    <Property Name="TreatyNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TreatyDateСonclusion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TreatyType" Type="Int32" Nullable="false" />
+    <Property Name="ReasonForTermination" Type="Int32" />
+    <Property Name="TreatyTerminationDate" Type="DateTime" Precision="3" />
+    <Property Name="TreatyPersonalAccount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ReasonForTermination1" Relationship="CRM24Model.FK_Treaty_ReasonForTermination" FromRole="Treaty" ToRole="ReasonForTermination" />
+    <NavigationProperty Name="ServiceTreaty" Relationship="CRM24Model.FK_ServiceTreaty_Treaty" FromRole="Treaty" ToRole="ServiceTreaty" />
+    <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_Treaty" FromRole="Treaty" ToRole="Subscriber" />
+    <NavigationProperty Name="TypeTreaty" Relationship="CRM24Model.FK_Treaty_TypeTreaty" FromRole="Treaty" ToRole="TypeTreaty" />
+  </EntityType>
+  <EntityType Name="TypeOfBuilding">
+    <Key>
+      <PropertyRef Name="IDTypeOfBuilding" />
+    </Key>
+    <Property Name="IDTypeOfBuilding" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfBuilding1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DistrictsAddress" Relationship="CRM24Model.FK_Districts_TypeOfBuilding" FromRole="TypeOfBuilding" ToRole="DistrictsAddress" />
+  </EntityType>
+  <EntityType Name="TypeOfProblem">
+    <Key>
+      <PropertyRef Name="IDTypeOfProblem" />
+    </Key>
+    <Property Name="IDTypeOfProblem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeOfProblem1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_TypeOfProblem" FromRole="TypeOfProblem" ToRole="CRM" />
+  </EntityType>
+  <EntityType Name="TypeService">
+    <Key>
+      <PropertyRef Name="IDTypeService" />
+    </Key>
+    <Property Name="IDTypeService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeService1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_TypeService" FromRole="TypeService" ToRole="CRM" />
+  </EntityType>
+  <EntityType Name="TypeTreaty">
+    <Key>
+      <PropertyRef Name="IDTypeTreaty" />
+    </Key>
+    <Property Name="IDTypeTreaty" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeTreaty1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Treaty" Relationship="CRM24Model.FK_Treaty_TypeTreaty" FromRole="TypeTreaty" ToRole="Treaty" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="Int32" Nullable="false" />
+    <Property Name="IDRole" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Roles" Relationship="CRM24Model.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="ViewService">
+    <Key>
+      <PropertyRef Name="IDView" />
+    </Key>
+    <Property Name="IDView" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ViewName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_ViewService" FromRole="ViewService" ToRole="CRM" />
+  </EntityType>
+  <Association Name="FK_Address_City">
+    <End Type="CRM24Model.City" Role="City" Multiplicity="1" />
+    <End Type="CRM24Model.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Country">
+    <End Type="CRM24Model.Country" Role="Country" Multiplicity="1" />
+    <End Type="CRM24Model.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="IDCountry" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Country" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Districts">
+    <End Type="CRM24Model.DistrictsAddress" Role="DistrictsAddress" Multiplicity="0..1" />
+    <End Type="CRM24Model.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DistrictsAddress">
+        <PropertyRef Name="DistrictsID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Districts" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Address_Street">
+    <End Type="CRM24Model.Street" Role="Street" Multiplicity="1" />
+    <End Type="CRM24Model.Address" Role="Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Street">
+        <PropertyRef Name="IDStreet" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="Street" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Address">
+    <End Type="CRM24Model.Address" Role="Address" Multiplicity="1" />
+    <End Type="CRM24Model.Subscriber" Role="Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="IDAddress" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="AddressRegistration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Problem">
+    <End Type="CRM24Model.Problem" Role="Problem" Multiplicity="0..1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="IDProblem" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="Problem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Service">
+    <End Type="CRM24Model.Service" Role="Service" Multiplicity="1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="IDService" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="Service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_Status">
+    <End Type="CRM24Model.Status" Role="Status" Multiplicity="1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="IDStatus" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ServiceStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_TypeOfProblem">
+    <End Type="CRM24Model.TypeOfProblem" Role="TypeOfProblem" Multiplicity="1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfProblem">
+        <PropertyRef Name="IDTypeOfProblem" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="TypeProblem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_TypeService">
+    <End Type="CRM24Model.TypeService" Role="TypeService" Multiplicity="1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeService">
+        <PropertyRef Name="IDTypeService" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ServiceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Applications_ViewService">
+    <End Type="CRM24Model.ViewService" Role="ViewService" Multiplicity="1" />
+    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ViewService">
+        <PropertyRef Name="IDView" />
+      </Principal>
+      <Dependent Role="CRM">
+        <PropertyRef Name="ApplicationView" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_TypeOfBuilding">
+    <End Type="CRM24Model.TypeOfBuilding" Role="TypeOfBuilding" Multiplicity="1" />
+    <End Type="CRM24Model.DistrictsAddress" Role="DistrictsAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfBuilding">
+        <PropertyRef Name="IDTypeOfBuilding" />
+      </Principal>
+      <Dependent Role="DistrictsAddress">
+        <PropertyRef Name="DistrictBuildingType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employees_Roles">
+    <End Type="CRM24Model.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="CRM24Model.Employees" Role="Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Equipments">
+    <End Type="CRM24Model.Equipments" Role="Equipments" Multiplicity="1" />
+    <End Type="CRM24Model.Subscriber" Role="Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipments">
+        <PropertyRef Name="EquipmentID" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="SubscriberEquipment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Gender">
+    <End Type="CRM24Model.Gender" Role="Gender" Multiplicity="1" />
+    <End Type="CRM24Model.Subscriber" Role="Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="Genre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Information_Roles">
+    <End Type="CRM24Model.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="CRM24Model.Information" Role="Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Information">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_PassportData">
+    <End Type="CRM24Model.PassportData" Role="PassportData" Multiplicity="1" />
+    <End Type="CRM24Model.Subscriber" Role="Subscriber" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PassportData">
+        <PropertyRef Name="IDSubscriber" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="IDSubscriber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treaty_ReasonForTermination">
+    <End Type="CRM24Model.ReasonForTermination" Role="ReasonForTermination" Multiplicity="0..1" />
+    <End Type="CRM24Model.Treaty" Role="Treaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReasonForTermination">
+        <PropertyRef Name="IDReasonForTermination" />
+      </Principal>
+      <Dependent Role="Treaty">
+        <PropertyRef Name="ReasonForTermination" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Type="CRM24Model.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="CRM24Model.Users" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="IDRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceTreaty_Service">
+    <End Type="CRM24Model.Service" Role="Service" Multiplicity="1" />
+    <End Type="CRM24Model.ServiceTreaty" Role="ServiceTreaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="IDService" />
+      </Principal>
+      <Dependent Role="ServiceTreaty">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceTreaty_Treaty">
+    <End Type="CRM24Model.Treaty" Role="Treaty" Multiplicity="1" />
+    <End Type="CRM24Model.ServiceTreaty" Role="ServiceTreaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treaty">
+        <PropertyRef Name="TreatyNumber" />
+      </Principal>
+      <Dependent Role="ServiceTreaty">
+        <PropertyRef Name="TreatyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriber_Treaty">
+    <End Type="CRM24Model.Treaty" Role="Treaty" Multiplicity="1" />
+    <End Type="CRM24Model.Subscriber" Role="Subscriber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treaty">
+        <PropertyRef Name="TreatyNumber" />
+      </Principal>
+      <Dependent Role="Subscriber">
+        <PropertyRef Name="IDTreaty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treaty_TypeTreaty">
+    <End Type="CRM24Model.TypeTreaty" Role="TypeTreaty" Multiplicity="1" />
+    <End Type="CRM24Model.Treaty" Role="Treaty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeTreaty">
+        <PropertyRef Name="IDTypeTreaty" />
+      </Principal>
+      <Dependent Role="Treaty">
+        <PropertyRef Name="TreatyType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище CRM24ModelContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="CRM24Model.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Districts" ColumnName="Districts" />
+          <ScalarProperty Name="Apartment" ColumnName="Apartment" />
+          <ScalarProperty Name="Home" ColumnName="Home" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="IDAddress" ColumnName="IDAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="CRM24Model.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="City1" ColumnName="City" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="CRM24Model.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRM">
+      <EntityTypeMapping TypeName="CRM24Model.CRM">
+        <MappingFragment StoreEntitySet="CRM">
+          <ScalarProperty Name="TypeProblem" ColumnName="TypeProblem" />
+          <ScalarProperty Name="DateClosing" ColumnName="DateClosing" />
+          <ScalarProperty Name="Problem" ColumnName="Problem" />
+          <ScalarProperty Name="TypeEquipment" ColumnName="TypeEquipment" />
+          <ScalarProperty Name="ServiceStatus" ColumnName="ServiceStatus" />
+          <ScalarProperty Name="ApplicationView" ColumnName="ApplicationView" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="PersonalAccount" ColumnName="PersonalAccount" />
+          <ScalarProperty Name="ApplicationDate" ColumnName="ApplicationDate" />
+          <ScalarProperty Name="ApplicationNumber" ColumnName="ApplicationNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictsAddress">
+      <EntityTypeMapping TypeName="CRM24Model.DistrictsAddress">
+        <MappingFragment StoreEntitySet="DistrictsAddress">
+          <ScalarProperty Name="DistrictBuildingType" ColumnName="DistrictBuildingType" />
+          <ScalarProperty Name="DistrictMetro" ColumnName="DistrictMetro" />
+          <ScalarProperty Name="DistrictPopulation" ColumnName="DistrictPopulation" />
+          <ScalarProperty Name="DistrictSquare" ColumnName="DistrictSquare" />
+          <ScalarProperty Name="DistrictsName" ColumnName="DistrictsName" />
+          <ScalarProperty Name="DistrictsID" ColumnName="DistrictsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="CRM24Model.Employees">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="CRM24Model.Equipments">
+        <MappingFragment StoreEntitySet="Equipments">
+          <ScalarProperty Name="EquipmentSeriaNumber" ColumnName="EquipmentSeriaNumber" />
+          <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+          <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="CRM24Model.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information">
+      <EntityTypeMapping TypeName="CRM24Model.Information">
+        <MappingFragment StoreEntitySet="Information">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Information1" ColumnName="Information" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="IDInformation" ColumnName="IDInformation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassportData">
+      <EntityTypeMapping TypeName="CRM24Model.PassportData">
+        <MappingFragment StoreEntitySet="PassportData">
+          <ScalarProperty Name="PassportDateIssued" ColumnName="PassportDateIssued" />
+          <ScalarProperty Name="PassportIssued" ColumnName="PassportIssued" />
+          <ScalarProperty Name="PassportCode" ColumnName="PassportCode" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="IDSubscriber" ColumnName="IDSubscriber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Problem">
+      <EntityTypeMapping TypeName="CRM24Model.Problem">
+        <MappingFragment StoreEntitySet="Problem">
+          <ScalarProperty Name="ProblemName" ColumnName="ProblemName" />
+          <ScalarProperty Name="IDProblem" ColumnName="IDProblem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReasonForTermination">
+      <EntityTypeMapping TypeName="CRM24Model.ReasonForTermination">
+        <MappingFragment StoreEntitySet="ReasonForTermination">
+          <ScalarProperty Name="ReasonForTermination1" ColumnName="ReasonForTermination" />
+          <ScalarProperty Name="IDReasonForTermination" ColumnName="IDReasonForTermination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="CRM24Model.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="CRM24Model.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="IDService" ColumnName="IDService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceTreaty">
+      <EntityTypeMapping TypeName="CRM24Model.ServiceTreaty">
+        <MappingFragment StoreEntitySet="ServiceTreaty">
+          <ScalarProperty Name="TreatyID" ColumnName="TreatyID" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="IDServiceTreaty" ColumnName="IDServiceTreaty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="CRM24Model.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Status1" ColumnName="Status" />
+          <ScalarProperty Name="IDStatus" ColumnName="IDStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Street">
+      <EntityTypeMapping TypeName="CRM24Model.Street">
+        <MappingFragment StoreEntitySet="Street">
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="IDStreet" ColumnName="IDStreet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriber">
+      <EntityTypeMapping TypeName="CRM24Model.Subscriber">
+        <MappingFragment StoreEntitySet="Subscriber">
+          <ScalarProperty Name="SubscriberEquipment" ColumnName="SubscriberEquipment" />
+          <ScalarProperty Name="IDTreaty" ColumnName="IDTreaty" />
+          <ScalarProperty Name="AddressAccommodation" ColumnName="AddressAccommodation" />
+          <ScalarProperty Name="AddressRegistration" ColumnName="AddressRegistration" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NumberPhone" ColumnName="NumberPhone" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="SubscriberPatronymic" ColumnName="SubscriberPatronymic" />
+          <ScalarProperty Name="SubscriberName" ColumnName="SubscriberName" />
+          <ScalarProperty Name="SubscriberSurname" ColumnName="SubscriberSurname" />
+          <ScalarProperty Name="IDSubscriber" ColumnName="IDSubscriber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treaty">
+      <EntityTypeMapping TypeName="CRM24Model.Treaty">
+        <MappingFragment StoreEntitySet="Treaty">
+          <ScalarProperty Name="TreatyPersonalAccount" ColumnName="TreatyPersonalAccount" />
+          <ScalarProperty Name="TreatyTerminationDate" ColumnName="TreatyTerminationDate" />
+          <ScalarProperty Name="ReasonForTermination" ColumnName="ReasonForTermination" />
+          <ScalarProperty Name="TreatyType" ColumnName="TreatyType" />
+          <ScalarProperty Name="TreatyDateСonclusion" ColumnName="TreatyDateСonclusion" />
+          <ScalarProperty Name="TreatyNumber" ColumnName="TreatyNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfBuilding">
+      <EntityTypeMapping TypeName="CRM24Model.TypeOfBuilding">
+        <MappingFragment StoreEntitySet="TypeOfBuilding">
+          <ScalarProperty Name="TypeOfBuilding1" ColumnName="TypeOfBuilding" />
+          <ScalarProperty Name="IDTypeOfBuilding" ColumnName="IDTypeOfBuilding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfProblem">
+      <EntityTypeMapping TypeName="CRM24Model.TypeOfProblem">
+        <MappingFragment StoreEntitySet="TypeOfProblem">
+          <ScalarProperty Name="TypeOfProblem1" ColumnName="TypeOfProblem" />
+          <ScalarProperty Name="IDTypeOfProblem" ColumnName="IDTypeOfProblem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeService">
+      <EntityTypeMapping TypeName="CRM24Model.TypeService">
+        <MappingFragment StoreEntitySet="TypeService">
+          <ScalarProperty Name="TypeService1" ColumnName="TypeService" />
+          <ScalarProperty Name="IDTypeService" ColumnName="IDTypeService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeTreaty">
+      <EntityTypeMapping TypeName="CRM24Model.TypeTreaty">
+        <MappingFragment StoreEntitySet="TypeTreaty">
+          <ScalarProperty Name="TypeTreaty1" ColumnName="TypeTreaty" />
+          <ScalarProperty Name="IDTypeTreaty" ColumnName="IDTypeTreaty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CRM24Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="IDRole" ColumnName="IDRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewService">
+      <EntityTypeMapping TypeName="CRM24Model.ViewService">
+        <MappingFragment StoreEntitySet="ViewService">
+          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+          <ScalarProperty Name="IDView" ColumnName="IDView" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
