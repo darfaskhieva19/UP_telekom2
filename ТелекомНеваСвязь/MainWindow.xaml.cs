@@ -94,7 +94,7 @@ namespace ТелекомНеваСвязь
                         default:
                         break;
                 }
-                //imgUser.ImageSource = new BitmapImage(new Uri("../../picture/" + employees.Photo, UriKind.Relative)); //фото пользователя 
+                imgUser.ImageSource = new BitmapImage(new Uri("../../picture/" + employees.Photo, UriKind.Relative)); //фото пользователя 
             }
         }
 
