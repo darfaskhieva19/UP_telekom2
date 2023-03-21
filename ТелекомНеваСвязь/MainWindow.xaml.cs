@@ -28,6 +28,7 @@ namespace ТелекомНеваСвязь
             ClassFrame.Mframe.Navigate(new PageSubscriber());
             tbTitle.Text = "Абоненты ТНС";
             List<Employees> employees = DataBase.Base.Employees.ToList();
+            cbUser.Items.Add("Выберите пользователя");
             foreach(Employees employee in employees)
             {
                 cbUser.Items.Add(employee.Surname + " " + employee.Name + " " + employee.Patronymic);

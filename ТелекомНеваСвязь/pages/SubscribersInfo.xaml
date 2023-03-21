@@ -75,7 +75,7 @@
             </StackPanel>
         </ScrollViewer>
         
-        <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="1" Width="150" Height="30" HorizontalAlignment="Left" Margin="5"/>
+        <Button Name="btnBack" Content="Назад" Click="btnBack_Click" Grid.Row="1" HorizontalAlignment="Left" Margin="5" Template="{StaticResource Btn2}"/>
 
     </Grid>
 </Page>

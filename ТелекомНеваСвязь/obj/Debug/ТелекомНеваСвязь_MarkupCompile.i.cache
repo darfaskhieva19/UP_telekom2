@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Downloads\Sessia2-master\Sessia2-master\ТелекомНеваСвязь\obj\Debug\
+C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\
 ТелекомНеваСвязь
 none
 false
 DEBUG;TRACE
-C:\Users\User\Downloads\Sessia2-master\Sessia2-master\ТелекомНеваСвязь\App.xaml
-417980858
+C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\App.xaml
+5121839510
 3-1268903758
-40-174680103
-181756508951
-MainWindow.xaml;PageCRM.xaml;pages\PageSubscriber.xaml;pages\SubscribersInfo.xaml;
+41-1228020399
+18-151090285
+MainWindow.xaml;pages\PageCRM.xaml;pages\PageSubscriber.xaml;pages\SubscribersInfo.xaml;WindowNewCRM.xaml;
 
 True
 

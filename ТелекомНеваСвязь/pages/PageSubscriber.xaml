@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ТелекомНеваСвязь"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d" Style="{StaticResource PageM}"
+      d:DesignHeight="450" d:DesignWidth="850"
       Title="PageSubscriber">
 
     <Grid>
@@ -15,6 +15,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -22,40 +23,41 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Vertical">
+            
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="3">
                 <TextBlock Text="Фамилия" HorizontalAlignment="Center"/>
                 <TextBox Name="tbSurname" TextChanged="tbSurname_TextChanged"/>
             </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Vertical">
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="3">
                 <TextBlock Text="Район" HorizontalAlignment="Center"/>
                 <ComboBox Name="cbRaion" SelectionChanged="cbRaion_SelectionChanged"/>
             </StackPanel>
-            <StackPanel Grid.Column="2" Orientation="Vertical">
+            <StackPanel Grid.Column="2" Orientation="Vertical" Margin="3">
                 <TextBlock Text="Улица" HorizontalAlignment="Center"/>
                 <ComboBox Name="cbStreet" SelectionChanged="cbStreet_SelectionChanged"/>
             </StackPanel>
-            <StackPanel Grid.Column="3" Orientation="Vertical">
+            <StackPanel Grid.Column="3" Orientation="Vertical" Margin="3">
                 <TextBlock Text="Лицевой счет" HorizontalAlignment="Center"/>
-                <TextBox Name="tbPersonalAccount" TextChanged="tbSurname_TextChanged"/>
+                <TextBox Name="tbPersonalAccount" TextChanged="tbSurname_TextChanged" PreviewTextInput="tbPersonalAccount_PreviewTextInput"/>
             </StackPanel>
         </Grid>
-        <DataGrid Name="dgSubscriber" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" MouseDoubleClick="dgSubscriber_MouseDoubleClick">
+        <DataGrid Name="dgSubscriber" Height="480" Grid.Row="1" Margin="10" FontSize="16" AutoGenerateColumns="False" CanUserAddRows="False" MouseDoubleClick="dgSubscriber_MouseDoubleClick">
             <DataGrid.Resources>
                 <Style TargetType="TextBlock" x:Key="WrapText">
                     <Setter Property="TextWrapping" Value="Wrap"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер" Binding="{Binding IDSubscriber}" Width="1.1*" ElementStyle="{StaticResource WrapText}"/>
-                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}" Width="2.5*" ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTextColumn Header="Номер" Binding="{Binding IDSubscriber}" Width="1.3*" ElementStyle="{StaticResource WrapText}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}" Width="3*" ElementStyle="{StaticResource WrapText}"/>
                 <DataGridTextColumn Header="Номер договора" Binding="{Binding IDTreaty}" Width="2*" ElementStyle="{StaticResource WrapText}"/>
                 <DataGridTextColumn Header="Лицевой счет" Binding="{Binding  Treaty.TreatyPersonalAccount}" Width="1.6*" ElementStyle="{StaticResource WrapText}"/>
                 <DataGridTextColumn Header="Услуги" Binding="{Binding  SubscribersService}" Width="2*" ElementStyle="{StaticResource WrapText}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <CheckBox Name="cbActive" Content="Активные" Grid.Column="0" VerticalAlignment="Center" Margin="5" FontSize="18" Click="cbActive_Click"/>
-            <CheckBox Name="cbNoActive" Content="Неактивные" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="18" Click="cbActive_Click"/>
+            <CheckBox Name="cbActive" Content="Активные" Grid.Column="0" VerticalAlignment="Center" Margin="5" FontSize="16" Click="cbActive_Click"/>
+            <CheckBox Name="cbNoActive" Content="Неактивные" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="16" Click="cbActive_Click"/>
         </StackPanel>
     </Grid>
 </Page>

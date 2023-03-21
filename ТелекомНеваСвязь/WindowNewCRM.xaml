@@ -1,0 +1,86 @@
+﻿<Window x:Class="ТелекомНеваСвязь.WindowNewCRM"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ТелекомНеваСвязь"
+        mc:Ignorable="d"
+        Title="WindowNewCRM" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Новая заявка" Style="{StaticResource txtHeader}"/>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Name="tbNumber"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock Text="Дата составления" HorizontalAlignment="Center"/>
+                        <DatePicker Name="dpDate" FontSize="16" MinWidth="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock Text="Номер абонента" HorizontalAlignment="Center"/>
+                        <TextBlock Name="tbPhone" MinWidth="200"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock Text="Лицевой счёт" HorizontalAlignment="Center"/>
+                        <TextBlock Name="tbPersonalAccount" MinWidth="200"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center">
+                        <TextBlock Text="Услуга" HorizontalAlignment="Center"/>
+                        <ComboBox Name="cbService" Width="250"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock Text="Вид услуги" HorizontalAlignment="Center"/>
+                        <ComboBox x:Name="cbTypeOfService" SelectionChanged="cbTypeOfService_SelectionChanged" Width="250"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Column="2" HorizontalAlignment="Center">
+                        <TextBlock Text="Тип услуги" HorizontalAlignment="Center"/>
+                        <ComboBox x:Name="cbServiceType" Width="250"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2" Margin="0 5 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                </Grid>
+            </Grid>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnSave" Content="Сохранить" Template="{StaticResource Btn}" Click="btnSave_Click" Grid.Column="0"/>
+            <Button Name="btnTest" Content="Протестировать" Template="{StaticResource Btn}" Click="btnTest_Click" Grid.Column="1"/>
+        </Grid>
+
+    </Grid>
+</Window>

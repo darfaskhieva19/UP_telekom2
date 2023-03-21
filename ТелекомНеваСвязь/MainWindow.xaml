@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ТелекомНеваСвязь"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1250" Icon="/resource/image.ico">
+        Title="MainWindow" Height="800" Width="1250" Icon="/resource/image.ico" MinHeight="800" MinWidth="1250">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
@@ -41,10 +41,10 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Grid Grid.Column="1" Grid.ColumnSpan="3" Margin="0,0,-1,0">
+        <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="4*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
@@ -57,7 +57,7 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                        <TextBlock Name="tbTitle" FontSize="40" FontWeight="Bold" Margin="30,0,0,0"/>
+                        <TextBlock Name="tbTitle" FontSize="40" FontWeight="SemiBold" Margin="25 0 0 0"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <ComboBox Name="cbUser" Width="320" Height="30" SelectionChanged="cbUser_SelectionChanged" FontSize="18"/>
@@ -69,13 +69,13 @@
                     </StackPanel>
                 </Grid>
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="События" HorizontalAlignment="Right" Margin="0 0 35 0" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="События" HorizontalAlignment="Right" Margin="0 0 50 0" VerticalAlignment="Bottom" FontSize="22"/>
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
                     <Frame Name="frameL" NavigationUIVisibility="Hidden"/>

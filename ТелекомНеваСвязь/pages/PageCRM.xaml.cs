@@ -20,9 +20,16 @@ namespace ТелекомНеваСвязь
     /// </summary>
     public partial class PageCRM : Page
     {
+        Subscriber s;
         public PageCRM()
         {
             InitializeComponent();
+        }
+
+        private void btnAddCRM_Click(object sender, RoutedEventArgs e)
+        {
+            WindowNewCRM newCRM = new WindowNewCRM();
+            newCRM.ShowDialog();
         }
     }
 }

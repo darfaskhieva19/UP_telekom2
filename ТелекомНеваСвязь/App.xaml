@@ -4,6 +4,42 @@
              xmlns:local="clr-namespace:ТелекомНеваСвязь"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="PageM" TargetType="Page">
+            <Setter Property="FontFamily" Value=" Comic Sans MS"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="txtHeader">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="16"/>            
+        </Style>
+
+        <ControlTemplate TargetType="Button" x:Key="Btn2">
+            <Border CornerRadius="13" BorderThickness="0.5" BorderBrush="Black" Background="#B5DEFA" Height="40" Width="100" Margin="4">
+                <ContentControl  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="16" Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+
+        <ControlTemplate TargetType="Button" x:Key="Btn">
+            <Border CornerRadius="13" BorderThickness="0.5" BorderBrush="Black" Background="#B5DEFA" Height="40" Width="180" Margin="4">
+                <ContentControl  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="16" Foreground="Black" Content="{TemplateBinding Content}"/>
+            </Border>
+        </ControlTemplate>
+
+        <Style TargetType="TextBox" x:Key="TB">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Width" Value="190"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
     </Application.Resources>
 </Application>

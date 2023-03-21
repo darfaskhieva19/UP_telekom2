@@ -127,5 +127,12 @@ namespace ТелекомНеваСвязь
             Filter();
         }
 
+        private void tbPersonalAccount_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!(Char.IsDigit(e.Text, 0)))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

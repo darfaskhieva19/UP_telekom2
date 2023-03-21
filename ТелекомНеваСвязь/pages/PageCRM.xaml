@@ -1,0 +1,24 @@
+﻿<Page x:Class="ТелекомНеваСвязь.PageCRM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ТелекомНеваСвязь"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageCRM">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Номер телефона" HorizontalAlignment="Center"/>
+                <TextBox Name="tbPhone" Style="{StaticResource TB}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Фамилия" HorizontalAlignment="Center"/>
+                <TextBox Name="tbSurname" Style="{StaticResource TB}"/>
+            </StackPanel>
+            <Button Name="btnAddCRM" Content="Сформировать заявку" Click="btnAddCRM_Click" Margin="0 10 0 0" Template="{StaticResource Btn}"/>
+        </StackPanel>
+    </Grid>
+</Page>
