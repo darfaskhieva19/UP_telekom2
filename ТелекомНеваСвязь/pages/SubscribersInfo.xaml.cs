@@ -25,14 +25,14 @@ namespace ТелекомНеваСвязь
         {
             InitializeComponent();
             tbNumber.Text = "Номер абонента: " + subscribers.IDSubscriber;
-            tbFIO.Text = "ФИО: " + subscribers.SubscriberSurname + " " + subscribers.SubscriberName + " " + subscribers.SubscriberPatronymic;
+            tbFIO.Text = subscribers.SubscriberSurname + " " + subscribers.SubscriberName + " " + subscribers.SubscriberPatronymic;
             tbSeria.Text = "Серия: " + subscribers.PassportData.Series; //Формирование паспортных данных
             tbNomer.Text = "Номер: " + subscribers.PassportData.Number;
             tbDateOfIssue.Text = "Дата выдачи: " + subscribers.PassportData.PassportDateIssued;
             tbIssuedBy.Text = "Выдан: " + subscribers.PassportData.PassportIssued;
             tbTreatyNumber.Text = "Номер: " + subscribers.Treaty.TreatyNumber; //Формирование данных договора
             tbDateOfCinclusion.Text = "Дата заключения: " + subscribers.Treaty.TreatyDateСonclusion;
-            tbTypeTreaty.Text = "Тип договора: " + subscribers.Treaty.TypeTreaty;
+            tbTypeTreaty.Text = "Тип договора: " + subscribers.Treaty.TypeTreaty.TypeTreaty1;
             if (subscribers.Treaty.TreatyTerminationDate != null)
             {
                 tbTermibationDate.Text = "Дата расторжения: " + subscribers.Treaty.TreatyTerminationDate;
@@ -45,29 +45,7 @@ namespace ТелекомНеваСвязь
                 tbReasonForTermination.Text = "";
                 tbReasonForTermination.Visibility = Visibility.Collapsed;
             }
-            tbPersonalA.Text = "Лицевой счет: " + subscribers.Treaty.TreatyPersonalAccount;
-            //if (subscribers.Address.Street1.StreetName != null)
-            //{
-            //    if (subscribers.Address.Home != null)
-            //    {
-            //        if (subscribers.Address.Apartment != null)
-            //        {
-            //            tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName + ", " + subscribers.Address.Street1.StreetName + ", " + subscribers.Address.Home + ", " + subscribers.Address.Apartment; ;
-            //        }
-            //        else
-            //        {
-            //            tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName + ", " + subscribers.Address.Street1.StreetName + ", " + subscribers.Address.Home;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName + ", " + subscribers.Address.Street1.StreetName;
-            //    }
-            //}
-            //else
-            //{
-            //    tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName;
-            //}
+            tbPersonalA.Text = "Лицевой счет: " + subscribers.Treaty.TreatyPersonalAccount;           
             tbService.Text = subscribers.SubscribersService;
         }
 

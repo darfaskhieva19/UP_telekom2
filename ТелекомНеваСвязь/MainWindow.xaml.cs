@@ -48,7 +48,7 @@ namespace ТелекомНеваСвязь
             {
                 Employees employees = DataBase.Base.Employees.FirstOrDefault(z => z.ID == cbUser.SelectedIndex + 1);
                 DateTime DT = DateTime.Now.Date;
-                List<Information> information = DataBase.Base.Information.Where(z => z.IDRole == employees.IDRole).ToList();
+                List<Information> information = DataBase.Base.Information.Where(z => z.IDRole == employees.IDRole&&z.Date==DT).ToList();
                 listEvent.ItemsSource = information;
                 switch (employees.IDRole)
                 {

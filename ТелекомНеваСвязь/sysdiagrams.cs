@@ -12,18 +12,12 @@ namespace ТелекомНеваСвязь
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeService
+    public partial class sysdiagrams
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeService()
-        {
-            this.CRM = new HashSet<CRM>();
-        }
-    
-        public int IDTypeService { get; set; }
-        public string TypeService1 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CRM> CRM { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

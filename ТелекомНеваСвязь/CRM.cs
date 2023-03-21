@@ -29,7 +29,7 @@ namespace ТелекомНеваСвязь
         public virtual Service Service1 { get; set; }
         public virtual Status Status { get; set; }
         public virtual TypeOfProblem TypeOfProblem { get; set; }
-        public virtual TypeService TypeService { get; set; }
-        public virtual ViewService ViewService { get; set; }
+        public virtual Type Type { get; set; }
+        public virtual View View { get; set; }
     }
 }

@@ -179,6 +179,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CRM24Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Treaty">
       <EntityTypeMapping TypeName="CRM24Model.Treaty">
         <MappingFragment StoreEntitySet="Treaty">
@@ -188,6 +199,15 @@
           <ScalarProperty Name="TreatyType" ColumnName="TreatyType" />
           <ScalarProperty Name="TreatyDateСonclusion" ColumnName="TreatyDateСonclusion" />
           <ScalarProperty Name="TreatyNumber" ColumnName="TreatyNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type">
+      <EntityTypeMapping TypeName="CRM24Model.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="Type1" ColumnName="Type" />
+          <ScalarProperty Name="IDView" ColumnName="IDView" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -204,14 +224,6 @@
         <MappingFragment StoreEntitySet="TypeOfProblem">
           <ScalarProperty Name="TypeOfProblem1" ColumnName="TypeOfProblem" />
           <ScalarProperty Name="IDTypeOfProblem" ColumnName="IDTypeOfProblem" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TypeService">
-      <EntityTypeMapping TypeName="CRM24Model.TypeService">
-        <MappingFragment StoreEntitySet="TypeService">
-          <ScalarProperty Name="TypeService1" ColumnName="TypeService" />
-          <ScalarProperty Name="IDTypeService" ColumnName="IDTypeService" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -237,11 +249,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ViewService">
-      <EntityTypeMapping TypeName="CRM24Model.ViewService">
-        <MappingFragment StoreEntitySet="ViewService">
-          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
-          <ScalarProperty Name="IDView" ColumnName="IDView" />
+    <EntitySetMapping Name="View">
+      <EntityTypeMapping TypeName="CRM24Model.View">
+        <MappingFragment StoreEntitySet="View">
+          <ScalarProperty Name="ServiceView" ColumnName="ServiceView" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

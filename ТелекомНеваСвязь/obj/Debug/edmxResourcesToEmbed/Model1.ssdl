@@ -161,6 +161,16 @@
     <Property Name="IDTreaty" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="SubscriberEquipment" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Treaty">
     <Key>
       <PropertyRef Name="TreatyNumber" />
@@ -171,6 +181,14 @@
     <Property Name="ReasonForTermination" Type="int" />
     <Property Name="TreatyTerminationDate" Type="datetime" />
     <Property Name="TreatyPersonalAccount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDView" Type="int" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="TypeOfBuilding">
     <Key>
@@ -185,13 +203,6 @@
     </Key>
     <Property Name="IDTypeOfProblem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TypeOfProblem" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="TypeService">
-    <Key>
-      <PropertyRef Name="IDTypeService" />
-    </Key>
-    <Property Name="IDTypeService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TypeService" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="TypeTreaty">
     <Key>
@@ -213,12 +224,12 @@
     <Property Name="IDRole" Type="int" Nullable="false" />
     <Property Name="Photo" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="ViewService">
+  <EntityType Name="View">
     <Key>
-      <PropertyRef Name="IDView" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="IDView" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ViewName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceView" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="FK_Address_City">
     <End Role="City" Type="Self.City" Multiplicity="1" />
@@ -304,24 +315,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Applications_TypeService">
-    <End Role="TypeService" Type="Self.TypeService" Multiplicity="1" />
+  <Association Name="FK_CRM_Type">
+    <End Role="Type" Type="Self.Type" Multiplicity="1" />
     <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="TypeService">
-        <PropertyRef Name="IDTypeService" />
+      <Principal Role="Type">
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="CRM">
         <PropertyRef Name="ServiceType" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Applications_ViewService">
-    <End Role="ViewService" Type="Self.ViewService" Multiplicity="1" />
+  <Association Name="FK_CRM_View">
+    <End Role="View" Type="Self.View" Multiplicity="1" />
     <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ViewService">
-        <PropertyRef Name="IDView" />
+      <Principal Role="View">
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="CRM">
         <PropertyRef Name="ApplicationView" />
@@ -472,6 +483,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Type_View">
+    <End Role="View" Type="Self.View" Multiplicity="1" />
+    <End Role="Type" Type="Self.Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="View">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Type">
+        <PropertyRef Name="IDView" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -502,13 +525,14 @@
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Street" EntityType="Self.Street" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Subscriber" EntityType="Self.Subscriber" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Treaty" EntityType="Self.Treaty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeOfBuilding" EntityType="Self.TypeOfBuilding" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeOfProblem" EntityType="Self.TypeOfProblem" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TypeService" EntityType="Self.TypeService" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeTreaty" EntityType="Self.TypeTreaty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ViewService" EntityType="Self.ViewService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View" EntityType="Self.View" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Address_City" Association="Self.FK_Address_City">
       <End Role="City" EntitySet="City" />
       <End Role="Address" EntitySet="Address" />
@@ -537,12 +561,12 @@
       <End Role="TypeOfProblem" EntitySet="TypeOfProblem" />
       <End Role="CRM" EntitySet="CRM" />
     </AssociationSet>
-    <AssociationSet Name="FK_Applications_TypeService" Association="Self.FK_Applications_TypeService">
-      <End Role="TypeService" EntitySet="TypeService" />
+    <AssociationSet Name="FK_CRM_Type" Association="Self.FK_CRM_Type">
+      <End Role="Type" EntitySet="Type" />
       <End Role="CRM" EntitySet="CRM" />
     </AssociationSet>
-    <AssociationSet Name="FK_Applications_ViewService" Association="Self.FK_Applications_ViewService">
-      <End Role="ViewService" EntitySet="ViewService" />
+    <AssociationSet Name="FK_CRM_View" Association="Self.FK_CRM_View">
+      <End Role="View" EntitySet="View" />
       <End Role="CRM" EntitySet="CRM" />
     </AssociationSet>
     <AssociationSet Name="FK_Districts_TypeOfBuilding" Association="Self.FK_Districts_TypeOfBuilding">
@@ -592,6 +616,10 @@
     <AssociationSet Name="FK_Treaty_TypeTreaty" Association="Self.FK_Treaty_TypeTreaty">
       <End Role="TypeTreaty" EntitySet="TypeTreaty" />
       <End Role="Treaty" EntitySet="Treaty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Type_View" Association="Self.FK_Type_View">
+      <End Role="View" EntitySet="View" />
+      <End Role="Type" EntitySet="Type" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />

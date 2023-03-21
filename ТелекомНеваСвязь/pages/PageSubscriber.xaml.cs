@@ -66,7 +66,8 @@ namespace ТелекомНеваСвязь
             //фильтрация по району
             if (cbRaion.SelectedIndex > 0)
             {
-                listFilter = listFilter.Where(z => z.Address.DistrictsAddress.DistrictsName == (string)cbRaion.SelectedValue).ToList();
+                DistrictsAddress districts = DataBase.Base.DistrictsAddress.FirstOrDefault(x => x.DistrictsName == cbRaion.SelectedValue);
+                listFilter = listFilter.Where(x => x.Address.Districts == districts.DistrictsID).ToList();
             }
             //фильтрация по улицам
             if (cbStreet.SelectedIndex > 0)
@@ -115,10 +116,6 @@ namespace ТелекомНеваСвязь
             if (subscribers != null)
             {
                 ClassFrame.Mframe.Navigate(new SubscribersInfo(subscribers));
-            }
-            else
-            {
-                return;
             }
         }
 

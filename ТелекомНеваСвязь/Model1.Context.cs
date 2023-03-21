@@ -42,12 +42,13 @@ namespace ТелекомНеваСвязь
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<Street> Street { get; set; }
         public virtual DbSet<Subscriber> Subscriber { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Treaty> Treaty { get; set; }
+        public virtual DbSet<Type> Type { get; set; }
         public virtual DbSet<TypeOfBuilding> TypeOfBuilding { get; set; }
         public virtual DbSet<TypeOfProblem> TypeOfProblem { get; set; }
-        public virtual DbSet<TypeService> TypeService { get; set; }
         public virtual DbSet<TypeTreaty> TypeTreaty { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<ViewService> ViewService { get; set; }
+        public virtual DbSet<View> View { get; set; }
     }
 }

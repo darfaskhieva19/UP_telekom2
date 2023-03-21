@@ -28,8 +28,6 @@ namespace ТелекомНеваСвязь
 
         private void btnAddCRM_Click(object sender, RoutedEventArgs e)
         {
-            WindowNewCRM newCRM = new WindowNewCRM(s);
-            newCRM.ShowDialog();
         }
 
         private void BEnter_Click(object sender, RoutedEventArgs e)
@@ -47,7 +45,7 @@ namespace ТелекомНеваСвязь
                 }
                 else
                 {
-                    MessageBox.Show("успех!!!");
+                    MessageBox.Show("Успех!");
                     btnAddCRM.Visibility = Visibility;
                 }
             }

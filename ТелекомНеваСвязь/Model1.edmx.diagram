@@ -6,29 +6,30 @@
     <edmx:Diagrams>
       <Diagram DiagramId="0041e18fc18045e3b6628f7c6c780166" Name="Diagram1">
         <EntityTypeShape EntityType="CRM24Model.Address" Width="1.5" PointX="5.25" PointY="1.5" />
-        <EntityTypeShape EntityType="CRM24Model.City" Width="1.5" PointX="3" PointY="7.875" />
-        <EntityTypeShape EntityType="CRM24Model.Country" Width="1.5" PointX="3" PointY="5.5" />
-        <EntityTypeShape EntityType="CRM24Model.CRM" Width="1.5" PointX="10" PointY="8.5" />
+        <EntityTypeShape EntityType="CRM24Model.City" Width="1.5" PointX="3" PointY="5.5" />
+        <EntityTypeShape EntityType="CRM24Model.Country" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="CRM24Model.CRM" Width="1.5" PointX="12.25" PointY="11" />
         <EntityTypeShape EntityType="CRM24Model.DistrictsAddress" Width="1.5" PointX="3" PointY="1.875" />
-        <EntityTypeShape EntityType="CRM24Model.Employees" Width="1.5" PointX="15" PointY="1.25" />
-        <EntityTypeShape EntityType="CRM24Model.Equipments" Width="1.5" PointX="5.25" PointY="17.625" />
-        <EntityTypeShape EntityType="CRM24Model.Gender" Width="1.5" PointX="5.25" PointY="6.5" />
-        <EntityTypeShape EntityType="CRM24Model.Information" Width="1.5" PointX="15" PointY="8.25" />
-        <EntityTypeShape EntityType="CRM24Model.PassportData" Width="1.5" PointX="5.25" PointY="8.875" />
-        <EntityTypeShape EntityType="CRM24Model.ReasonForTermination" Width="1.5" PointX="3" PointY="15.375" />
-        <EntityTypeShape EntityType="CRM24Model.Roles" Width="1.5" PointX="12.75" PointY="4.75" />
-        <EntityTypeShape EntityType="CRM24Model.Service" Width="1.5" PointX="7.75" PointY="9.625" />
-        <EntityTypeShape EntityType="CRM24Model.ServiceTreaty" Width="1.5" PointX="10" PointY="14.125" />
-        <EntityTypeShape EntityType="CRM24Model.Status" Width="1.5" PointX="7.75" PointY="17.25" />
-        <EntityTypeShape EntityType="CRM24Model.Street" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="CRM24Model.Employees" Width="1.5" PointX="17" PointY="7.5" />
+        <EntityTypeShape EntityType="CRM24Model.Equipments" Width="1.5" PointX="5.25" PointY="5.75" />
+        <EntityTypeShape EntityType="CRM24Model.Gender" Width="1.5" PointX="5.25" PointY="11" />
+        <EntityTypeShape EntityType="CRM24Model.Information" Width="1.5" PointX="17" PointY="1.25" />
+        <EntityTypeShape EntityType="CRM24Model.PassportData" Width="1.5" PointX="5.25" PointY="18.25" />
+        <EntityTypeShape EntityType="CRM24Model.ReasonForTermination" Width="1.5" PointX="3" PointY="15.625" />
+        <EntityTypeShape EntityType="CRM24Model.Roles" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CRM24Model.Service" Width="1.5" PointX="10" PointY="7.125" />
+        <EntityTypeShape EntityType="CRM24Model.ServiceTreaty" Width="1.5" PointX="12.25" PointY="8" />
+        <EntityTypeShape EntityType="CRM24Model.Status" Width="1.5" PointX="10" PointY="17.75" />
+        <EntityTypeShape EntityType="CRM24Model.Street" Width="1.5" PointX="3" PointY="7.875" />
         <EntityTypeShape EntityType="CRM24Model.Subscriber" Width="1.5" PointX="7.5" PointY="1" />
-        <EntityTypeShape EntityType="CRM24Model.Treaty" Width="1.5" PointX="5.25" PointY="13.5" />
+        <EntityTypeShape EntityType="CRM24Model.sysdiagrams" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CRM24Model.Treaty" Width="1.5" PointX="5.25" PointY="13.75" />
+        <EntityTypeShape EntityType="CRM24Model.Type" Width="1.5" PointX="10" PointY="14.375" />
         <EntityTypeShape EntityType="CRM24Model.TypeOfBuilding" Width="1.5" PointX="0.75" PointY="2.375" />
-        <EntityTypeShape EntityType="CRM24Model.TypeOfProblem" Width="1.5" PointX="7.75" PointY="6.25" />
-        <EntityTypeShape EntityType="CRM24Model.TypeService" Width="1.5" PointX="7.75" PointY="15" />
-        <EntityTypeShape EntityType="CRM24Model.TypeTreaty" Width="1.5" PointX="3" PointY="13" />
-        <EntityTypeShape EntityType="CRM24Model.Users" Width="1.5" PointX="15" PointY="4.75" />
-        <EntityTypeShape EntityType="CRM24Model.ViewService" Width="1.5" PointX="7.75" PointY="12.625" />
+        <EntityTypeShape EntityType="CRM24Model.TypeOfProblem" Width="1.5" PointX="10" PointY="9.75" />
+        <EntityTypeShape EntityType="CRM24Model.TypeTreaty" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="CRM24Model.Users" Width="1.5" PointX="17" PointY="4" />
+        <EntityTypeShape EntityType="CRM24Model.View" Width="1.5" PointX="7.75" PointY="9.625" />
         <AssociationConnector Association="CRM24Model.FK_Address_City" />
         <AssociationConnector Association="CRM24Model.FK_Address_Country" />
         <AssociationConnector Association="CRM24Model.FK_Address_Districts" />
@@ -37,8 +38,8 @@
         <AssociationConnector Association="CRM24Model.FK_Applications_Service" />
         <AssociationConnector Association="CRM24Model.FK_Applications_Status" />
         <AssociationConnector Association="CRM24Model.FK_Applications_TypeOfProblem" />
-        <AssociationConnector Association="CRM24Model.FK_Applications_TypeService" />
-        <AssociationConnector Association="CRM24Model.FK_Applications_ViewService" />
+        <AssociationConnector Association="CRM24Model.FK_CRM_Type" />
+        <AssociationConnector Association="CRM24Model.FK_CRM_View" />
         <AssociationConnector Association="CRM24Model.FK_Districts_TypeOfBuilding" />
         <AssociationConnector Association="CRM24Model.FK_Employees_Roles" />
         <AssociationConnector Association="CRM24Model.FK_Subscriber_Equipments" />
@@ -51,6 +52,7 @@
         <AssociationConnector Association="CRM24Model.FK_ServiceTreaty_Treaty" />
         <AssociationConnector Association="CRM24Model.FK_Subscriber_Treaty" />
         <AssociationConnector Association="CRM24Model.FK_Treaty_TypeTreaty" />
+        <AssociationConnector Association="CRM24Model.FK_Type_View" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
