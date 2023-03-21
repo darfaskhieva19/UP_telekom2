@@ -17,11 +17,23 @@
 
         <ScrollViewer>
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Name="tbNumber"/>
-                    <TextBlock Name="tbFIO"/>
-                </StackPanel>
-                <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Name="tbNumber"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Name="tbFIO"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Name="tbPersonalA"/>
+                    </StackPanel>
+                </Grid>
+                <StackPanel HorizontalAlignment="Center" Width="650">
                     <TextBlock Name="tbAddress"/>
                 </StackPanel>
                 
@@ -69,8 +81,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Header="История обращения">
-                    <TextBlock Name="listCRM" TextWrapping="Wrap"/>
+                <GroupBox Header="Подключенные услуги">
+                    <TextBlock Name="tbService" Text="{Binding SubscribersService}"/>
                 </GroupBox>
             </StackPanel>
         </ScrollViewer>

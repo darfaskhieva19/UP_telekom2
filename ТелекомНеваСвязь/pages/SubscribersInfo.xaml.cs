@@ -25,7 +25,7 @@ namespace ТелекомНеваСвязь
         {
             InitializeComponent();
             tbNumber.Text = "Номер абонента: " + subscribers.IDSubscriber;
-            tbFIO.Text = subscribers.SubscriberSurname + " " + subscribers.SubscriberName + " " + subscribers.SubscriberPatronymic;
+            tbFIO.Text = "ФИО: " + subscribers.SubscriberSurname + " " + subscribers.SubscriberName + " " + subscribers.SubscriberPatronymic;
             tbSeria.Text = "Серия: " + subscribers.PassportData.Series; //Формирование паспортных данных
             tbNomer.Text = "Номер: " + subscribers.PassportData.Number;
             tbDateOfIssue.Text = "Дата выдачи: " + subscribers.PassportData.PassportDateIssued;
@@ -45,14 +45,14 @@ namespace ТелекомНеваСвязь
                 tbReasonForTermination.Text = "";
                 tbReasonForTermination.Visibility = Visibility.Collapsed;
             }
-            //tbPersonalAccount.Text = "Лицевой счет: " + subscribers.Treaty.TreatyPersonalAccount;
-            //if (subscribers.Address.Street1.StreetName != null) //данные адреса
+            tbPersonalA.Text = "Лицевой счет: " + subscribers.Treaty.TreatyPersonalAccount;
+            //if (subscribers.Address.Street1.StreetName != null)
             //{
             //    if (subscribers.Address.Home != null)
             //    {
             //        if (subscribers.Address.Apartment != null)
             //        {
-            //            tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName + ", " + subscribers.Address.Street1.StreetName + ", " + subscribers.Address.Home + ", " + subscribers.Address.Apartment;
+            //            tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName + ", " + subscribers.Address.Street1.StreetName + ", " + subscribers.Address.Home + ", " + subscribers.Address.Apartment; ;
             //        }
             //        else
             //        {
@@ -68,7 +68,7 @@ namespace ТелекомНеваСвязь
             //{
             //    tbAddress.Text = subscribers.Address.DistrictsAddress.DistrictsName;
             //}
-           
+            tbService.Text = subscribers.SubscribersService;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
