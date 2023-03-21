@@ -47,7 +47,6 @@ namespace ТелекомНеваСвязь
             if (cbUser.SelectedIndex != 0)
             {
                 Employees employees = DataBase.Base.Employees.FirstOrDefault(z => z.ID == cbUser.SelectedIndex + 1);
-                //imgUser.ImageSource = new BitmapImage(new Uri("../../picture/" + employees.Photo, UriKind.Relative)); //фото пользователя 
                 List<Information> information = DataBase.Base.Information.Where(z => z.IDRole == employees.IDRole).ToList();
                 listEvent.ItemsSource = information;
                 switch (employees.IDRole)
@@ -94,7 +93,8 @@ namespace ТелекомНеваСвязь
                         break;
                         default:
                         break;
-                }                            
+                }
+                //imgUser.ImageSource = new BitmapImage(new Uri("../../picture/" + employees.Photo, UriKind.Relative)); //фото пользователя 
             }
         }
 

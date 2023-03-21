@@ -28,8 +28,29 @@ namespace ТелекомНеваСвязь
 
         private void btnAddCRM_Click(object sender, RoutedEventArgs e)
         {
-            WindowNewCRM newCRM = new WindowNewCRM();
+            WindowNewCRM newCRM = new WindowNewCRM(s);
             newCRM.ShowDialog();
+        }
+
+        private void BEnter_Click(object sender, RoutedEventArgs e)
+        {
+            s = DataBase.Base.Subscriber.FirstOrDefault(z => z.NumberPhone == tbPhone.Text);
+            if (s == null)
+            {
+                MessageBox.Show("Нет пользователя с таким номером телефона!!!");
+            }
+            else
+            {
+                if (s.SubscriberSurname.ToLower() != tbSurname.Text.ToLower())
+                {
+                    MessageBox.Show("Пользователь не найден!!!");
+                }
+                else
+                {
+                    MessageBox.Show("успех!!!");
+                    btnAddCRM.Visibility = Visibility;
+                }
+            }
         }
     }
 }

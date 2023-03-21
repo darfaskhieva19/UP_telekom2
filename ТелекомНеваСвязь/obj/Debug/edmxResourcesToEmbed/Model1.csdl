@@ -11,7 +11,6 @@
     <EntitySet Name="Gender" EntityType="CRM24Model.Gender" />
     <EntitySet Name="Information" EntityType="CRM24Model.Information" />
     <EntitySet Name="PassportData" EntityType="CRM24Model.PassportData" />
-    <EntitySet Name="Problem" EntityType="CRM24Model.Problem" />
     <EntitySet Name="ReasonForTermination" EntityType="CRM24Model.ReasonForTermination" />
     <EntitySet Name="Roles" EntityType="CRM24Model.Roles" />
     <EntitySet Name="Service" EntityType="CRM24Model.Service" />
@@ -45,10 +44,6 @@
     <AssociationSet Name="FK_Subscriber_Address" Association="CRM24Model.FK_Subscriber_Address">
       <End Role="Address" EntitySet="Address" />
       <End Role="Subscriber" EntitySet="Subscriber" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Applications_Problem" Association="CRM24Model.FK_Applications_Problem">
-      <End Role="Problem" EntitySet="Problem" />
-      <End Role="CRM" EntitySet="CRM" />
     </AssociationSet>
     <AssociationSet Name="FK_Applications_Service" Association="CRM24Model.FK_Applications_Service">
       <End Role="Service" EntitySet="Service" />
@@ -164,10 +159,9 @@
     <Property Name="ApplicationView" Type="Int32" Nullable="false" />
     <Property Name="ServiceStatus" Type="Int32" Nullable="false" />
     <Property Name="TypeEquipment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Problem" Type="Int32" />
+    <Property Name="Problem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DateClosing" Type="DateTime" Precision="3" />
     <Property Name="TypeProblem" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Problem1" Relationship="CRM24Model.FK_Applications_Problem" FromRole="CRM" ToRole="Problem" />
     <NavigationProperty Name="Service1" Relationship="CRM24Model.FK_Applications_Service" FromRole="CRM" ToRole="Service" />
     <NavigationProperty Name="Status" Relationship="CRM24Model.FK_Applications_Status" FromRole="CRM" ToRole="Status" />
     <NavigationProperty Name="TypeOfProblem" Relationship="CRM24Model.FK_Applications_TypeOfProblem" FromRole="CRM" ToRole="TypeOfProblem" />
@@ -239,14 +233,6 @@
     <Property Name="PassportIssued" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PassportDateIssued" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Subscriber" Relationship="CRM24Model.FK_Subscriber_PassportData" FromRole="PassportData" ToRole="Subscriber" />
-  </EntityType>
-  <EntityType Name="Problem">
-    <Key>
-      <PropertyRef Name="IDProblem" />
-    </Key>
-    <Property Name="IDProblem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProblemName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CRM" Relationship="CRM24Model.FK_Applications_Problem" FromRole="Problem" ToRole="CRM" />
   </EntityType>
   <EntityType Name="ReasonForTermination">
     <Key>
@@ -449,18 +435,6 @@
       </Principal>
       <Dependent Role="Subscriber">
         <PropertyRef Name="AddressRegistration" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Applications_Problem">
-    <End Type="CRM24Model.Problem" Role="Problem" Multiplicity="0..1" />
-    <End Type="CRM24Model.CRM" Role="CRM" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Problem">
-        <PropertyRef Name="IDProblem" />
-      </Principal>
-      <Dependent Role="CRM">
-        <PropertyRef Name="Problem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -103,3 +103,5 @@ C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debu
 C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\ТелекомНеваСвязь.csproj.CopyComplete
 C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\ТелекомНеваСвязь.exe
 C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\ТелекомНеваСвязь.pdb
+C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\windows\WindowNewCRM.g.cs
+C:\Users\User\Source\Repos\UP_telekom2\ТелекомНеваСвязь\obj\Debug\windows\WindowNewCRM.baml

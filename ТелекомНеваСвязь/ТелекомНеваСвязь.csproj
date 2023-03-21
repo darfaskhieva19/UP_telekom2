@@ -151,7 +151,7 @@
     <Compile Include="ViewService.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="WindowNewCRM.xaml.cs">
+    <Compile Include="windows\WindowNewCRM.xaml.cs">
       <DependentUpon>WindowNewCRM.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -180,7 +180,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowNewCRM.xaml">
+    <Page Include="windows\WindowNewCRM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,9 +229,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

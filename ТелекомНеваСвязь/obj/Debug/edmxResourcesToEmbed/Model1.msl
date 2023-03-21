@@ -112,14 +112,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Problem">
-      <EntityTypeMapping TypeName="CRM24Model.Problem">
-        <MappingFragment StoreEntitySet="Problem">
-          <ScalarProperty Name="ProblemName" ColumnName="ProblemName" />
-          <ScalarProperty Name="IDProblem" ColumnName="IDProblem" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ReasonForTermination">
       <EntityTypeMapping TypeName="CRM24Model.ReasonForTermination">
         <MappingFragment StoreEntitySet="ReasonForTermination">

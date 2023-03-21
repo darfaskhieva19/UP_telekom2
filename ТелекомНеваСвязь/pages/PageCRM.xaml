@@ -18,6 +18,7 @@
                 <TextBlock Text="Фамилия" HorizontalAlignment="Center"/>
                 <TextBox Name="tbSurname" Style="{StaticResource TB}"/>
             </StackPanel>
+            <Button Name="BEnter" Content="Войти" Click="BEnter_Click" Template="{StaticResource Btn}" Margin="0 10 0 0"/>
             <Button Name="btnAddCRM" Content="Сформировать заявку" Click="btnAddCRM_Click" Margin="0 10 0 0" Template="{StaticResource Btn}"/>
         </StackPanel>
     </Grid>

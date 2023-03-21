@@ -38,7 +38,7 @@
     <Property Name="ApplicationView" Type="int" Nullable="false" />
     <Property Name="ServiceStatus" Type="int" Nullable="false" />
     <Property Name="TypeEquipment" Type="nvarchar(max)" />
-    <Property Name="Problem" Type="int" />
+    <Property Name="Problem" Type="nvarchar(max)" />
     <Property Name="DateClosing" Type="datetime" />
     <Property Name="TypeProblem" Type="int" Nullable="false" />
   </EntityType>
@@ -100,13 +100,6 @@
     <Property Name="PassportCode" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="PassportIssued" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PassportDateIssued" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Problem">
-    <Key>
-      <PropertyRef Name="IDProblem" />
-    </Key>
-    <Property Name="IDProblem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProblemName" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ReasonForTermination">
     <Key>
@@ -272,18 +265,6 @@
       </Principal>
       <Dependent Role="Address">
         <PropertyRef Name="Street" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Applications_Problem">
-    <End Role="Problem" Type="Self.Problem" Multiplicity="0..1" />
-    <End Role="CRM" Type="Self.CRM" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Problem">
-        <PropertyRef Name="IDProblem" />
-      </Principal>
-      <Dependent Role="CRM">
-        <PropertyRef Name="Problem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -514,7 +495,6 @@
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Information" EntityType="Self.Information" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PassportData" EntityType="Self.PassportData" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Problem" EntityType="Self.Problem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ReasonForTermination" EntityType="Self.ReasonForTermination" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -544,10 +524,6 @@
     <AssociationSet Name="FK_Address_Street" Association="Self.FK_Address_Street">
       <End Role="Street" EntitySet="Street" />
       <End Role="Address" EntitySet="Address" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Applications_Problem" Association="Self.FK_Applications_Problem">
-      <End Role="Problem" EntitySet="Problem" />
-      <End Role="CRM" EntitySet="CRM" />
     </AssociationSet>
     <AssociationSet Name="FK_Applications_Service" Association="Self.FK_Applications_Service">
       <End Role="Service" EntitySet="Service" />
